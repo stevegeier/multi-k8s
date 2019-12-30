@@ -1,20 +1,20 @@
-apiVersion: certmanager.k8s.io/v1alpha1
+apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: k8s-multi-com-tls
+  name: 21stcenturycloudsolutions-tls
 spec:
-  secretName: k8s-multi-com
+  secretName: 21stcenturycloudsolutions-com
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: k8s-multi.com
+  commonName: 21stcenturycloudsolutions.com
   dnsNames:
-    - k8s-multi.com
-    - www.k8s-multi.com
+    - 21stcenturycloudsolutions.com
+    - www.21stcenturycloudsolutions.com
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
-          - k8s-multi.com
-          - www.k8s-multi.com
+          - 21stcenturycloudsolutions.com
+          - www.21stcenturycloudsolutions.com
